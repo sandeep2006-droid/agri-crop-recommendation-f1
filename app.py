@@ -153,7 +153,7 @@ def score_class(score):
 # ── HERO ────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero">
-  <h1>Tamil Nadu Crop Advisor</h1>
+  <h1>Agri-Crop Recommendation Portal</h1>
   <p>AI-powered recommendations based on district rainfall, soil, and historical yield data</p>
 </div>
 """, unsafe_allow_html=True)
