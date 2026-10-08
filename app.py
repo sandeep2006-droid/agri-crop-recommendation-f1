@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import json
+import os
+from pathlib import Path
 
 # ── CONFIG ──────────────────────────────────────────────────────────
 st.set_page_config(
@@ -111,10 +114,15 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     text-align: center; color: #8a9a8f; font-size: 0.92rem;
     border: 1px dashed #d0ccc4;
 }
+.model-badge {
+    display: inline-block; background: #e3f2fd; color: #1565c0;
+    font-weight: 500; font-size: 0.75rem; padding: 2px 8px;
+    border-radius: 12px; margin-top: 8px;
+}
 </style>
 """, unsafe_allow_html=True)
 
-# ── LOAD ────────────────────────────────────────────────────────────
+# ── LOAD DATA & MODELS ──────────────────────────────────────────────
 @st.cache_data
 def load_data():
     df = pd.read_csv("FINAL_READY_DATASET.csv")
@@ -122,11 +130,32 @@ def load_data():
     return df
 
 @st.cache_resource
-def load_model():
+def load_default_model():
+    """Load the default Random Forest model"""
     return joblib.load("clf_model.pkl")
 
+@st.cache_resource
+def load_district_registry():
+    """Load the district-to-best-model mapping"""
+    try:
+        if os.path.exists("district_best_models.json"):
+            with open("district_best_models.json", "r") as f:
+                return json.load(f)
+    except Exception as e:
+        st.warning(f"Could not load district registry: {e}")
+    return {"DEFAULT_MODEL": "Random Forest"}
+
+def get_best_model_for_district(district):
+    """
+    Returns the best model for a given district.
+    Falls back to default Random Forest if no district-specific model found.
+    """
+    registry = load_district_registry()
+    model_name = registry.get(district, registry.get("DEFAULT_MODEL", "Random Forest"))
+    return load_default_model(), model_name
+
 df = load_data()
-clf = load_model()
+default_clf = load_default_model()
 
 FEATURES = [
     "Water_Score", "Temp_Score", "Soil_Score",
@@ -136,8 +165,9 @@ FEATURES = [
 ]
 
 # ── HELPERS ─────────────────────────────────────────────────────────
-def predict_score(row_df):
-    proba = clf.predict_proba(row_df[FEATURES])[0]
+def predict_score(row_df, model):
+    """Generate ML score using the provided model"""
+    proba = model.predict_proba(row_df[FEATURES])[0]
     return proba[0] * 0.0 + proba[1] * 0.5 + proba[2] * 1.0
 
 def match_label(score):
@@ -169,6 +199,9 @@ with c3:
     crop_input = st.selectbox("🔍 Check a specific crop", ["None"] + sorted(df["Crop"].unique()))
 st.markdown('</div>', unsafe_allow_html=True)
 
+# Get the best model for this district
+clf, model_used = get_best_model_for_district(district)
+
 # ── FILTER & SCORE ──────────────────────────────────────────────────
 df_d = df[
     (df["District"] == district) &
@@ -177,7 +210,7 @@ df_d = df[
 
 if not df_d.empty:
     df_d["ML_Score"] = df_d.apply(
-        lambda r: predict_score(pd.DataFrame([r])), axis=1
+        lambda r: predict_score(pd.DataFrame([r]), clf), axis=1
     )
     df_d["Final_Score"] = 0.6 * df_d["Suitability_Score"] + 0.4 * df_d["ML_Score"]
 
@@ -265,7 +298,7 @@ with right:
             st.markdown('<div class="no-data">No data for this crop in this district.</div>', unsafe_allow_html=True)
         else:
             row = row_df.iloc[0]
-            ml_s = predict_score(row_df.iloc[[0]])
+            ml_s = predict_score(row_df.iloc[[0]], clf)
             final = 0.6 * row["Suitability_Score"] + 0.4 * ml_s
 
             if final >= 0.65:
@@ -319,6 +352,7 @@ with right:
           </div>
           <div style="margin-top:10px;background:#e8f5e0;border-radius:10px;padding:12px;text-align:center;font-size:0.85rem;color:#1a5c35">
             <span style="font-weight:600">Top pick this season:</span> {best_crop}
+            <div class="model-badge">🤖 Model: {model_used}</div>
           </div>
         </div>
         """, unsafe_allow_html=True)
