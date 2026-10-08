@@ -1,0 +1,36 @@
+District,Random Forest Accuracy,XGBoost Accuracy,Selected Model,Evaluation Method,Classes,Samples
+Ariyalur,0.8333,0.6667,Random Forest,5-fold stratified CV,2,12
+Chengalpattu,1.0,0.3333,Random Forest,stratified 70/30 holdout,2,7
+Coimbatore,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),2,11
+Cuddalore,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),2,11
+Dharmapuri,1.0,0.5333,Random Forest,5-fold stratified CV,2,11
+Dindigul,0.7667,0.5333,Random Forest,5-fold stratified CV,2,12
+Erode,0.9,0.7667,Random Forest,5-fold stratified CV,2,12
+Kallakurichi,0.8333,0.5833,Random Forest,4-fold stratified CV,2,10
+Kanyakumari,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),2,4
+Karur,0.9,0.5667,Random Forest,5-fold stratified CV,2,12
+Krishnagiri,0.9167,0.625,Random Forest,4-fold stratified CV,2,11
+Madurai,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),3,11
+Nagapattinam,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),2,7
+Namakkal,0.8333,0.625,Random Forest,4-fold stratified CV,2,11
+Perambalur,1.0,0.6667,Random Forest,stratified 70/30 holdout,2,9
+Pudukkottai,0.9,0.4667,Random Forest,5-fold stratified CV,2,11
+Ramanathapuram,1.0,0.6667,Random Forest,stratified 70/30 holdout,2,9
+Ranipet,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),3,12
+Salem,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),3,12
+Sivagangai,1.0,0.5,Random Forest,5-fold stratified CV,2,10
+Tenkasi,1.0,0.6667,Random Forest,stratified 70/30 holdout,2,9
+Thanjavur,1.0,0.6,Random Forest,5-fold stratified CV,2,10
+The Nilgiris,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),1,3
+Theni,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),3,11
+Thoothukudi,0.8,0.6,Random Forest,5-fold stratified CV,2,11
+Tiruchirapalli,1.0,0.8667,Random Forest,5-fold stratified CV,2,12
+Tirunelveli,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),2,8
+Tirupathur,0.9333,0.5333,Random Forest,5-fold stratified CV,2,11
+Tiruppur,1.0,0.625,Random Forest,4-fold stratified CV,2,11
+Tiruvallur,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),2,7
+Tiruvannamalai,0.8667,0.4333,Random Forest,5-fold stratified CV,2,12
+Tiruvarur,0.9743,0.9772,XGBoost,global model comparison (district has insufficient class diversity/data),2,7
+Vellore,0.8667,0.6333,Random Forest,5-fold stratified CV,2,12
+Villupuram,0.7917,0.5833,Random Forest,4-fold stratified CV,2,10
+Virudhunagar,0.9333,0.7333,Random Forest,5-fold stratified CV,2,12

@@ -1,0 +1,17 @@
+FIXED MODEL PIPELINE
+
+The previous XGBoost error happened because some districts contain only one target class.
+XGBoost cannot train a multiclass classifier when a district has only one class.
+
+This version:
+- Compares RF and XGBoost for districts with enough class diversity.
+- Uses stratified CV or holdout where valid.
+- For one-class/small districts, compares the global RF and XGBoost models.
+- Saves both models.
+- Selects the higher-scoring model.
+- Shows both scores and the selected model in the Streamlit UI.
+
+Run:
+py -m pip install -r requirements.txt
+py model_comparison.py
+py -m streamlit run app.py

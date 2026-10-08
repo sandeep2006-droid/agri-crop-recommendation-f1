@@ -1,0 +1,40 @@
+DISTRICT-WISE MODEL COMPARISON
+==============================
+
+Default model: XGBoost
+Random Forest district wins: 33
+XGBoost district wins: 0
+
+Ariyalur: Random Forest | RF=1.0000 | XGB=0.6667
+Chengalpattu: Random Forest | RF=1.0000 | XGB=0.5000
+Coimbatore: Random Forest | RF=1.0000 | XGB=1.0000
+Cuddalore: Random Forest | RF=1.0000 | XGB=1.0000
+Dharmapuri: Random Forest | RF=1.0000 | XGB=0.6667
+Dindigul: Random Forest | RF=0.6667 | XGB=0.3333
+Erode: Random Forest | RF=1.0000 | XGB=0.6667
+Kallakurichi: Random Forest | RF=1.0000 | XGB=0.5000
+Karur: Random Forest | RF=1.0000 | XGB=0.6667
+Krishnagiri: Random Forest | RF=1.0000 | XGB=0.6667
+Madurai: Random Forest | RF=1.0000 | XGB=1.0000
+Nagapattinam: Random Forest | RF=1.0000 | XGB=1.0000
+Namakkal: Random Forest | RF=1.0000 | XGB=0.6667
+Perambalur: Random Forest | RF=0.5000 | XGB=0.5000
+Pudukkottai: Random Forest | RF=0.6667 | XGB=0.3333
+Ramanathapuram: Random Forest | RF=0.5000 | XGB=0.5000
+Ranipet: Random Forest | RF=1.0000 | XGB=1.0000
+Salem: Random Forest | RF=1.0000 | XGB=1.0000
+Sivagangai: Random Forest | RF=0.5000 | XGB=0.5000
+Tenkasi: Random Forest | RF=0.5000 | XGB=0.5000
+Thanjavur: Random Forest | RF=0.5000 | XGB=0.5000
+Theni: Random Forest | RF=1.0000 | XGB=1.0000
+Thoothukudi: Random Forest | RF=1.0000 | XGB=0.3333
+Tiruchirapalli: Random Forest | RF=1.0000 | XGB=0.6667
+Tirunelveli: Random Forest | RF=1.0000 | XGB=1.0000
+Tirupathur: Random Forest | RF=1.0000 | XGB=0.6667
+Tiruppur: Random Forest | RF=1.0000 | XGB=0.6667
+Tiruvallur: Random Forest | RF=1.0000 | XGB=1.0000
+Tiruvannamalai: Random Forest | RF=1.0000 | XGB=0.3333
+Tiruvarur: Random Forest | RF=1.0000 | XGB=1.0000
+Vellore: Random Forest | RF=0.6667 | XGB=0.3333
+Villupuram: Random Forest | RF=1.0000 | XGB=0.5000
+Virudhunagar: Random Forest | RF=1.0000 | XGB=0.3333

@@ -1,0 +1,441 @@
+{
+  "DEFAULT_MODEL": "XGBoost",
+  "features": [
+    "Water_Score",
+    "Temp_Score",
+    "Soil_Score",
+    "Avg_Rainfall_mm",
+    "Production_MT",
+    "District_Temp_Min",
+    "District_Temp_Max",
+    "Water_Min",
+    "Water_Max"
+  ],
+  "global_random_forest_accuracy": 0.9743,
+  "global_xgboost_accuracy": 0.9772,
+  "districts": {
+    "Ariyalur": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.8333,
+      "xgboost_accuracy": 0.6667,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Ariyalur_random_forest.pkl",
+      "xgboost_file": "models/Ariyalur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Chengalpattu": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.3333,
+      "evaluation_method": "stratified 70/30 holdout",
+      "random_forest_file": "models/Chengalpattu_random_forest.pkl",
+      "xgboost_file": "models/Chengalpattu_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Coimbatore": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Coimbatore_random_forest.pkl",
+      "xgboost_file": "models/Coimbatore_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Cuddalore": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Cuddalore_random_forest.pkl",
+      "xgboost_file": "models/Cuddalore_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Dharmapuri": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.5333,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Dharmapuri_random_forest.pkl",
+      "xgboost_file": "models/Dharmapuri_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Dindigul": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.7667,
+      "xgboost_accuracy": 0.5333,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Dindigul_random_forest.pkl",
+      "xgboost_file": "models/Dindigul_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Erode": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.9,
+      "xgboost_accuracy": 0.7667,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Erode_random_forest.pkl",
+      "xgboost_file": "models/Erode_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Kallakurichi": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.8333,
+      "xgboost_accuracy": 0.5833,
+      "evaluation_method": "4-fold stratified CV",
+      "random_forest_file": "models/Kallakurichi_random_forest.pkl",
+      "xgboost_file": "models/Kallakurichi_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Kanyakumari": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Kanyakumari_random_forest.pkl",
+      "xgboost_file": "models/Kanyakumari_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Karur": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.9,
+      "xgboost_accuracy": 0.5667,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Karur_random_forest.pkl",
+      "xgboost_file": "models/Karur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Krishnagiri": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.9167,
+      "xgboost_accuracy": 0.625,
+      "evaluation_method": "4-fold stratified CV",
+      "random_forest_file": "models/Krishnagiri_random_forest.pkl",
+      "xgboost_file": "models/Krishnagiri_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Madurai": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Madurai_random_forest.pkl",
+      "xgboost_file": "models/Madurai_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Low",
+        "Moderate"
+      ]
+    },
+    "Nagapattinam": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Nagapattinam_random_forest.pkl",
+      "xgboost_file": "models/Nagapattinam_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Namakkal": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.8333,
+      "xgboost_accuracy": 0.625,
+      "evaluation_method": "4-fold stratified CV",
+      "random_forest_file": "models/Namakkal_random_forest.pkl",
+      "xgboost_file": "models/Namakkal_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Perambalur": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.6667,
+      "evaluation_method": "stratified 70/30 holdout",
+      "random_forest_file": "models/Perambalur_random_forest.pkl",
+      "xgboost_file": "models/Perambalur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Pudukkottai": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.9,
+      "xgboost_accuracy": 0.4667,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Pudukkottai_random_forest.pkl",
+      "xgboost_file": "models/Pudukkottai_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Ramanathapuram": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.6667,
+      "evaluation_method": "stratified 70/30 holdout",
+      "random_forest_file": "models/Ramanathapuram_random_forest.pkl",
+      "xgboost_file": "models/Ramanathapuram_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Ranipet": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Ranipet_random_forest.pkl",
+      "xgboost_file": "models/Ranipet_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Low",
+        "Moderate"
+      ]
+    },
+    "Salem": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Salem_random_forest.pkl",
+      "xgboost_file": "models/Salem_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Low",
+        "Moderate"
+      ]
+    },
+    "Sivagangai": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.5,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Sivagangai_random_forest.pkl",
+      "xgboost_file": "models/Sivagangai_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tenkasi": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.6667,
+      "evaluation_method": "stratified 70/30 holdout",
+      "random_forest_file": "models/Tenkasi_random_forest.pkl",
+      "xgboost_file": "models/Tenkasi_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Thanjavur": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.6,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Thanjavur_random_forest.pkl",
+      "xgboost_file": "models/Thanjavur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "The Nilgiris": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/The Nilgiris_random_forest.pkl",
+      "xgboost_file": "models/The Nilgiris_xgboost.pkl",
+      "classes": [
+        "Good"
+      ]
+    },
+    "Theni": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Theni_random_forest.pkl",
+      "xgboost_file": "models/Theni_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Low",
+        "Moderate"
+      ]
+    },
+    "Thoothukudi": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.8,
+      "xgboost_accuracy": 0.6,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Thoothukudi_random_forest.pkl",
+      "xgboost_file": "models/Thoothukudi_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tiruchirapalli": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.8667,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Tiruchirapalli_random_forest.pkl",
+      "xgboost_file": "models/Tiruchirapalli_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tirunelveli": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Tirunelveli_random_forest.pkl",
+      "xgboost_file": "models/Tirunelveli_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tirupathur": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.9333,
+      "xgboost_accuracy": 0.5333,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Tirupathur_random_forest.pkl",
+      "xgboost_file": "models/Tirupathur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tiruppur": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 1.0,
+      "xgboost_accuracy": 0.625,
+      "evaluation_method": "4-fold stratified CV",
+      "random_forest_file": "models/Tiruppur_random_forest.pkl",
+      "xgboost_file": "models/Tiruppur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tiruvallur": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Tiruvallur_random_forest.pkl",
+      "xgboost_file": "models/Tiruvallur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tiruvannamalai": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.8667,
+      "xgboost_accuracy": 0.4333,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Tiruvannamalai_random_forest.pkl",
+      "xgboost_file": "models/Tiruvannamalai_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Tiruvarur": {
+      "model": "XGBoost",
+      "random_forest_accuracy": 0.9743,
+      "xgboost_accuracy": 0.9772,
+      "evaluation_method": "global model comparison (district has insufficient class diversity/data)",
+      "random_forest_file": "models/Tiruvarur_random_forest.pkl",
+      "xgboost_file": "models/Tiruvarur_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Vellore": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.8667,
+      "xgboost_accuracy": 0.6333,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Vellore_random_forest.pkl",
+      "xgboost_file": "models/Vellore_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Villupuram": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.7917,
+      "xgboost_accuracy": 0.5833,
+      "evaluation_method": "4-fold stratified CV",
+      "random_forest_file": "models/Villupuram_random_forest.pkl",
+      "xgboost_file": "models/Villupuram_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    },
+    "Virudhunagar": {
+      "model": "Random Forest",
+      "random_forest_accuracy": 0.9333,
+      "xgboost_accuracy": 0.7333,
+      "evaluation_method": "5-fold stratified CV",
+      "random_forest_file": "models/Virudhunagar_random_forest.pkl",
+      "xgboost_file": "models/Virudhunagar_xgboost.pkl",
+      "classes": [
+        "Good",
+        "Moderate"
+      ]
+    }
+  }
+}
